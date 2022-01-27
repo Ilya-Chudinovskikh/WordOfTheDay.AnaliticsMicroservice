@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordOfTheDay.AnaliticsMicro
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordOfTheDay.AnaliticsMicroservice.Repository", "WordOfTheDay.AnaliticsMicroservice.Repository\WordOfTheDay.AnaliticsMicroservice.Repository.csproj", "{023C54E1-872F-4839-A688-CB03DF5CBE9C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E16E197-4899-4E1B-8028-83315FC372AF} = {3E16E197-4899-4E1B-8028-83315FC372AF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedModelsLibrary", "..\WordOfTheDayApp\SharedModelsLibrary\SharedModelsLibrary.csproj", "{3E16E197-4899-4E1B-8028-83315FC372AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +29,10 @@ Global
 		{023C54E1-872F-4839-A688-CB03DF5CBE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{023C54E1-872F-4839-A688-CB03DF5CBE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{023C54E1-872F-4839-A688-CB03DF5CBE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E16E197-4899-4E1B-8028-83315FC372AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E16E197-4899-4E1B-8028-83315FC372AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E16E197-4899-4E1B-8028-83315FC372AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E16E197-4899-4E1B-8028-83315FC372AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

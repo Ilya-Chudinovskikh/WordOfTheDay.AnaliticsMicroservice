@@ -14,4 +14,12 @@
     <PackageReference Include="MassTransit.RabbitMQ" Version="7.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\WordOfTheDayApp\SharedModelsLibrary\SharedModelsLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
