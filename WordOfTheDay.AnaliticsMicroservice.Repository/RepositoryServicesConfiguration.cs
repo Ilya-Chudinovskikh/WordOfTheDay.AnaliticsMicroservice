@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
 using MassTransit;
 
 namespace WordOfTheDay.AnaliticsMicroservice.Repository
 {
     public static class RepositoryServicesConfiguration
     {
-        public static void AddConfiguredMassTransit(this IServiceCollection services, string host)
+        public static void AddConfiguredMassTransitConsumer(this IServiceCollection services, string host)
         {
             services.AddMassTransit(configuration =>
             {
