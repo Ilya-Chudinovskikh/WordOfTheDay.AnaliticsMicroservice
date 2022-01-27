@@ -1,10 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using WordOfTheDay.Repository.Entities;
+//using Microsoft.EntityFrameworkCore;
 using System;
 using MassTransit;
 
-namespace WordOfTheDay.Repository
+namespace WordOfTheDay.AnaliticsMicroservice.Repository
 {
     public static class RepositoryServicesConfiguration
     {
