@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordOfTheDay.AnaliticsMicroservice.Api", "WordOfTheDay.AnaliticsMicroservice.Api\WordOfTheDay.AnaliticsMicroservice.Api.csproj", "{86EB8045-8DD6-4B9A-BB4D-710AF0AB54D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{023C54E1-872F-4839-A688-CB03DF5CBE9C} = {023C54E1-872F-4839-A688-CB03DF5CBE9C}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordOfTheDay.AnaliticsMicroservice.Repository", "WordOfTheDay.AnaliticsMicroservice.Repository\WordOfTheDay.AnaliticsMicroservice.Repository.csproj", "{023C54E1-872F-4839-A688-CB03DF5CBE9C}"
 EndProject
