@@ -7,9 +7,24 @@ namespace WordOfTheDay.AnaliticsMicroservice.Repository
 {
     internal class WordConsumer : IConsumer<WordInfo>
     {
-        public async Task Consume(ConsumeContext<WordInfo> context)
+        private readonly IAnaliticsRepository _analiticsRepository;
+        public WordConsumer(IAnaliticsRepository analiticsRepository)
         {
-            await Console.Out.WriteLineAsync(context.Message.Text);
+            _analiticsRepository = analiticsRepository;
+        }
+        public async Task Consume(ConsumeContext<WordInfo> wordInfoIncoming)
+        {
+            await Console.Out.WriteLineAsync(wordInfoIncoming.Message.Text);
+
+            await _analiticsRepository.PostWord(
+                new WordInfo(
+                    wordInfoIncoming.Message.Id, 
+                    wordInfoIncoming.Message.Email, 
+                    wordInfoIncoming.Message.Text, 
+                    wordInfoIncoming.Message.AddTime, 
+                    0.0, 
+                    0.0
+                ));
         }
     }
 }
