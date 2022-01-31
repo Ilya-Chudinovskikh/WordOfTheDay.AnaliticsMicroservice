@@ -9,7 +9,6 @@ namespace WordOfTheDay.AnaliticsMicroservice.Repository.Entities
             : base(options)
         {
         }
-
         public virtual DbSet<WordInfo> WordsInfo { get; set; }
         public AnaliticsContext()
         {

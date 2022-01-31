@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["WordOfTheDay.AnaliticsMicroservice.Api/WordOfTheDay.AnaliticsMicroservice.Api.csproj", "WordOfTheDay.AnaliticsMicroservice.Api/"]
-COPY ["WordOfTheDay.AnaliticsMicroservice.Domain/WordOfTheDay.AnaliticsMicroservice.Domain.csproj", "WordOfTheDay.AnaliticsMicroservice.Domain/"]
-COPY ["WordOfTheDay.AnaliticsMicroservice.Repository/WordOfTheDay.AnaliticsMicroservice.Repository.csproj", "WordOfTheDay.AnaliticsMicroservice.Repository/"]
-COPY ["../WordOfTheDayApp/SharedModelsLibrary/SharedModelsLibrary.csproj", "../WordOfTheDayApp/SharedModelsLibrary/"]
+COPY WordOfTheDay.AnaliticsMicroservice.Api/*.csproj ./WordOfTheDay.AnaliticsMicroservice.Api/
+COPY WordOfTheDay.AnaliticsMicroservice.Domain/*.csproj ./WordOfTheDay.AnaliticsMicroservice.Domain/
+COPY WordOfTheDay.AnaliticsMicroservice.Repository/*.csproj ./WordOfTheDay.AnaliticsMicroservice.Repository/
+COPY .././SharedModelsLibrary/*.csproj ./SharedModelsLibrary/
 RUN dotnet restore "WordOfTheDay.AnaliticsMicroservice.Api/WordOfTheDay.AnaliticsMicroservice.Api.csproj"
 COPY . .
 WORKDIR "/src/WordOfTheDay.AnaliticsMicroservice.Api"

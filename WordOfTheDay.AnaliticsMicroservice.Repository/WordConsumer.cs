@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WordOfTheDay.AnaliticsMicroservice.Repository
 {
-    internal class WordConsumer : IConsumer<WordInfo>
+    public class WordConsumer : IConsumer<WordInfo>
     {
         private readonly IAnaliticsRepository _analiticsRepository;
         public WordConsumer(IAnaliticsRepository analiticsRepository)
