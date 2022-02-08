@@ -8,6 +8,7 @@ namespace WordOfTheDay.AnaliticsMicroservice.Repository.Entities
         public AnaliticsContext (DbContextOptions<AnaliticsContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
         public virtual DbSet<WordInfo> WordsInfo { get; set; }
         public AnaliticsContext()
