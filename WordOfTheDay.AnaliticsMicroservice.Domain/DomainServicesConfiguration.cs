@@ -6,6 +6,10 @@ namespace WordOfTheDay.AnaliticsMicroservice.Domain
 {
     public static class DomainServicesConfiguration
     {
+        public static void AddDomain(this IServiceCollection services)
+        {
+            services.AddScoped<IAnaliticsServices, AnaliticsServices>();
+        }
         public static void AddConfiguredMassTransitConsumer(this IServiceCollection services, string host)
         {
             services.AddMassTransit(configuration =>

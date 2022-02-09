@@ -26,6 +26,8 @@ namespace WordOfTheDay.AnaliticsMicroservice
 
             services.AddRepositories(Configuration.GetConnectionString("AnaliticsContext"));
 
+            services.AddDomain();
+
             services.AddConfiguredMassTransitConsumer(Configuration.GetConnectionString("RabbitMQHost"));
         }
 
