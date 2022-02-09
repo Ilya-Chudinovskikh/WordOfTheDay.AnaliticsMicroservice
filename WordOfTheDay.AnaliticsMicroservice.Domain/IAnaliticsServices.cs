@@ -1,13 +1,11 @@
-﻿using System;
+﻿using SharedModelsLibrary;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WordOfTheDay.AnaliticsMicroservice.Domain
 {
     public interface IAnaliticsServices
     {
-
+        Task<List<WordInfo>> AllInfo();
     }
 }

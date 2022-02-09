@@ -1,7 +1,10 @@
 ﻿using SharedModelsLibrary;
-using System;
+using System.Data;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WordOfTheDay.AnaliticsMicroservice.Repository.Entities;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace WordOfTheDay.AnaliticsMicroservice.Repository
 {
@@ -16,6 +19,12 @@ namespace WordOfTheDay.AnaliticsMicroservice.Repository
         {
             _context.WordsInfo.Add(wordInfo);
             await _context.SaveChangesAsync();
+        }
+        public async Task<List<WordInfo>> AllInfo()
+        {
+            var allInfo = await _context.WordsInfo.ToListAsync();
+
+            return allInfo;
         }
     }
 }

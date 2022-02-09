@@ -26,7 +26,8 @@ services:
       Password: "Password123!"
       Database: "appdb"
     ports:
-      - 7001:70
+      - 8000:80
+      - 8001:443
     restart: on-failure
     depends_on:
       - ms-sql-server-an
