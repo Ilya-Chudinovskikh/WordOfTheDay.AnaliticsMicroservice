@@ -10,7 +10,7 @@ namespace WordOfTheDay.AnaliticsMicroservice.Repository
         public static void AddRepositories(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<AnaliticsContext>(options =>
-                    options.UseSqlServer(connectionString).LogTo(Console.WriteLine));
+                    options.UseSqlServer(connectionString)/*.LogTo(Console.WriteLine)*/);
 
             services.AddScoped<IAnaliticsRepository, AnaliticsRepository>();
         }

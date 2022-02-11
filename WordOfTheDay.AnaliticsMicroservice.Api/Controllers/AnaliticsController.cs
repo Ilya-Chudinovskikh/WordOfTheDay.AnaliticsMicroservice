@@ -19,5 +19,12 @@ namespace WordOfTheDay.AnaliticsMicroservice.Api.Controllers
         {
             _analiticsServices = analiticsServices;
         }
+        [HttpGet("get-all-info")]
+        public async Task<IActionResult> GetAllInfo()
+        {
+            var allInfo = await _analiticsServices.AllInfo();
+
+            return Ok(allInfo);
+        }
     }
 }

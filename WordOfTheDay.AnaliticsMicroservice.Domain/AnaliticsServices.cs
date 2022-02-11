@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SharedModelsLibrary;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WordOfTheDay.AnaliticsMicroservice.Repository;
 
 namespace WordOfTheDay.AnaliticsMicroservice.Domain
@@ -9,6 +12,12 @@ namespace WordOfTheDay.AnaliticsMicroservice.Domain
         public AnaliticsServices(IAnaliticsRepository analiticsRepository)
         {
             _analiticsRepository = analiticsRepository;
+        }
+        public async Task<List<WordInfo>> AllInfo()
+        {
+            var allInfo = await _analiticsRepository.AllInfo();
+
+            return allInfo;
         }
 
     }

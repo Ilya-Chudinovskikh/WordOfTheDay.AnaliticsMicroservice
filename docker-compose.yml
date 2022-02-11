@@ -1,18 +1,7 @@
 version: '3.9'
 services:
-  rabbitmq:
-    image: rabbitmq:3.9-management
-    container_name: rabbitmq
-    volumes:
-      - "~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/"
-      - "~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq"
-    ports:
-      - 5672:5672
-      - 15672:15672
-    environment:
-      - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMQ_DEFAULT_PASS=guest
-  ms-sql-server:
+
+  ms-sql-server-an:
     image: mcr.microsoft.com/mssql/server:2019-latest
     user: root
     environment:
@@ -22,12 +11,34 @@ services:
     ports:
       - 1443:1443
     volumes:
-      - "app2-db:/var/opt/mssql/data"
+      - "appdb_an:/var/opt/mssql/data"
+    networks:
+      - app
+
   wordofthedayapp:
     build:
       dockerfile: WordOfTheDay.AnaliticsMicroservice.Api/Dockerfile
-    image: wordofthedayms
+    image: wordoftheday_an
+    environment:
+      DbServer: "ms-sql-server"
+      DbPort: "1443"
+      DbUser: "sa"
+      Password: "Password123!"
+      Database: "appdb"
     ports:
-      - 7001:70
+      - 8000:80
+      - 8001:443
+    restart: on-failure
+    depends_on:
+      - ms-sql-server-an
+    networks:
+      - app
+
 volumes:
-  app2-db:
+  appdb_an:
+
+networks:
+  app:
+    external:
+      name: wordofthedayapp_app
+
